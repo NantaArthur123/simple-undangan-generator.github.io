@@ -38,18 +38,21 @@ function salin() {
 
   function salin2() {
     // Get the text field
-    var copyText = document.getElementById("hasil_undangan_2").innerHTML;
+    var copyText = document.getElementById("hasil_undangan_2");
   
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+
      // Copy the text inside the text field
-    navigator.clipboard.writeText(copyText);
+    navigator.clipboard.writeText(copyText.value);
   
     // Alert the copied text
-    alert("Copied the text: " + copyText);
+    alert("Copied the text: " + copyText.value);
   }
 
 
 
   function text_builder(name){
-    var x = "*UNDANGAN*<br> <br> Kepada Yth:<br> sdr/i "+name+"<br> <br> Bismillahirahmanirrahim.<br> Assalamualaikum Warohmatullohi wabarokaatuh<br> <br> Tanpa mengurangi rasa hormat, perkenankan kami mengundang sdr/i "+name+" untuk menghadiri acara Tasyakuran Pernikahan putra dan putri kami:<br> <br> *Mohammad Musthofa Kamal Alfaruqi dan Nur Rizqi Aini*<br> <br> dengan link e-invitation sebagai berikut<br> <br> <br> https://faruqkiki.my.id/?name="+name.replace(/ /g,"%20")+"<br> <br> Merupakan suatu kebahagiaan bagi kami apabila berkenan hadir dan memberikan doa terbaik serta restu kepada putra putri kami tersebut.<br> <br> Mohon maaf bila undangan hanya berupa e-invitation.<br> <br> Salam dan Hormat Kami,<br> Keluarga HM Chusnul Yaqin <br> <br> Wassalamualaikum Warohmatullohi&#160;Wabarokaatuh";
+    var x = "*UNDANGAN*\r\n \r\n Kepada Yth:\r\n sdr/i "+name+"\r\n \r\n Bismillahirahmanirrahim.\r\n Assalamualaikum Warohmatullohi wabarokaatuh\r\n \r\n Tanpa mengurangi rasa hormat, perkenankan kami mengundang sdr/i "+name+" untuk menghadiri acara Tasyakuran Pernikahan putra dan putri kami:\r\n \r\n *Mohammad Musthofa Kamal Alfaruqi dan Nur Rizqi Aini*\r\n \r\n dengan link e-invitation sebagai berikut\r\n \r\n \r\n https://faruqkiki.my.id/?name="+name.replace(/ /g,"%20")+"\r\n \r\n Merupakan suatu kebahagiaan bagi kami apabila berkenan hadir dan memberikan doa terbaik serta restu kepada putra putri kami tersebut.\r\n \r\n Mohon maaf bila undangan hanya berupa e-invitation.\r\n \r\n Salam dan Hormat Kami,\r\n Keluarga HM Chusnul Yaqin \r\n \r\n Wassalamualaikum Warohmatullohi&#160;Wabarokaatuh";
     return x;
   }
