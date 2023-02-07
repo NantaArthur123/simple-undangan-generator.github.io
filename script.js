@@ -21,19 +21,24 @@ function checkinput() {
         document.getElementById("hasil_container_2").style.visibility = "visible";
         document.getElementById("hasil_salin_2").style.visibility = "visible";
         var undanganfull  = text_builder(document.getElementById("nama_undangan").value)
-        return ["https://faruqkiki.my.id/?name="+document.getElementById("nama_undangan").value.replace(/ /g,"%20"),undanganfull];
+        var undanganfull2 = text_builder2(document.getElementById("nama_undangan").value)
+        return [undanganfull2,undanganfull];
     }
 }
 
 function salin() {
     // Get the text field
-    var copyText = document.getElementById("hasil_undangan").innerHTML;
+    var copyText = document.getElementById("hasil_undangan");
+
+    
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
   
      // Copy the text inside the text field
-    navigator.clipboard.writeText(copyText);
+    navigator.clipboard.writeText(copyText.value);
   
     // Alert the copied text
-    alert("Copied the text: " + copyText);
+    alert("Copied the text: " + copyText/value);
   }
 
   function salin2() {
@@ -54,5 +59,9 @@ function salin() {
 
   function text_builder(name){
     var x = "*UNDANGAN*\r\n \r\n Kepada Yth:\r\n sdr/i "+name+"\r\n \r\n Bismillahirahmanirrahim.\r\n Assalamualaikum Warohmatullohi wabarokaatuh\r\n \r\n Tanpa mengurangi rasa hormat, perkenankan kami mengundang sdr/i "+name+" untuk menghadiri acara Tasyakuran Pernikahan putra dan putri kami:\r\n \r\n *Mohammad Musthofa Kamal Alfaruqi dan Nur Rizqi Aini*\r\n \r\n dengan link e-invitation sebagai berikut\r\n \r\n \r\n https://faruqkiki.my.id/?name="+name.replace(/ /g,"%20")+"\r\n \r\n Merupakan suatu kebahagiaan bagi kami apabila berkenan hadir dan memberikan doa terbaik serta restu kepada putra putri kami tersebut.\r\n \r\n Mohon maaf bila undangan hanya berupa e-invitation.\r\n \r\n Salam dan Hormat Kami,\r\n Keluarga HM Chusnul Yaqin \r\n \r\n Wassalamualaikum Warohmatullohi&#160;Wabarokaatuh";
+    return x;
+  }
+  function text_builder2(name){
+    var x = "*UNDANGAN*\r\n \r\n Kepada Yth:\r\n sdr/i "+name+"\r\n \r\n Bismillahirahmanirrahim.\r\n Assalamualaikum Warohmatullohi wabarokaatuh\r\n \r\n Tanpa mengurangi rasa hormat, perkenankan kami mengundang sdr/i "+name+" untuk menghadiri acara Tasyakuran Pernikahan putra dan putri kami:\r\n \r\n *Mohammad Musthofa Kamal Alfaruqi dan Nur Rizqi Aini*\r\n \r\n dengan link e-invitation sebagai berikut\r\n \r\n \r\n https://nantaarthur123.github.io/Simple-undangan-nikah-using-javascript/?name="+name.replace(/ /g,"%20")+"\r\n \r\n Merupakan suatu kebahagiaan bagi kami apabila berkenan hadir dan memberikan doa terbaik serta restu kepada putra putri kami tersebut.\r\n \r\n Mohon maaf bila undangan hanya berupa e-invitation.\r\n \r\n Salam dan Hormat Kami,\r\n Keluarga HM Chusnul Yaqin \r\n \r\n Wassalamualaikum Warohmatullohi&#160;Wabarokaatuh";
     return x;
   }
