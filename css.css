@@ -1,0 +1,12 @@
+html,
+body {
+    height: 100%
+    
+}
+.bg{
+    background-color: rgb(80, 74, 116);
+    color: aliceblue;
+}
+a{
+    color: antiquewhite;
+}
